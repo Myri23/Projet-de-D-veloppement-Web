@@ -66,6 +66,7 @@ Avant d'utiliser ce programme, assurez vous d'avoir les éléments suivants :
 - CSS : styliser et formater l'apparence des pages web.
 - PHP : interagir avec les bases de données, gérer les sessions utilisateur, gérer les formulaires web
 - SQL : manipuler et de gérer les données stockées dans une base de données
+- JSON : manipuler et de gérer les données stockées dans une base de données
   
 - Configuration du Serveur : Configurez votre serveur web local tel que Apache pour servir les fichiers du projet. Assurez-vous que PHP est correctement configuré et activé sur votre serveur.
 
