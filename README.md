@@ -31,6 +31,7 @@ Nous avons un lien qui renvoie à la page KanimyTuto_inscription.php pour permet
 Nous avons un lien qui renvoie à la page KanimyTuto_connection.php pour permettre à l'utilisateur de se connecter.
 #### Barre de recherche
 La barre de recherche a été implémentée en utilisant SQL et JSON pour permettre une flexibilité et une manipulation efficace des données.
+
 -Usage :Ajout de mots clés selon la catégorie ou le sujet
 
 ### Page Accueil
