@@ -23,8 +23,7 @@
     <nav class="align-right"> 
         <a href="KanimyTuto_inscription.php" class="rounded-box">S'inscrire</a>
         <a href="KanimyTuto_connection.php" class="rounded-box">Se connecter</a>
-    </nav></br>	<br>
-
+    </nav></br>
 	<div class="search-container">
 		<form action="/search" method="GET">
 			<input type="search" name="query" placeholder="Rechercher..." required>
@@ -37,9 +36,18 @@
 		<article>
 				<header>
 						<h1>Créer une Illustration Numérique de Paysage en 5 Étapes</h1>
+						
 				</header>
+				       <header>
+              <div class="center-content">
+       <span>Publié le 29/05/2024 à 9h12 par Jades</span>
+            <div class="catalogue_accueil img">
+                    <img src="Illustration_Numérique.jpg" alt="illustration">
+            </div>
+        </div>
+        </header>
 
-		<img src=	"Illustration_Numérique.jpg">
+	
 				<section>
 						<h2>Introduction</h2>
 						<p>Dans ce tutoriel, nous allons apprendre à créer une illustration numérique de paysage en utilisant le logiciel de dessin numérique Adobe Photoshop. Ce tutoriel est adapté aux débutants et aux personnes ayant une expérience limitée en illustration numérique.</p>

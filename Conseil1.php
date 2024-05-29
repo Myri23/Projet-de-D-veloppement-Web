@@ -7,6 +7,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<body>
 	<header class="navbar">
         <img src="title.png" class="logo" width="150px" height="100px">
     
@@ -61,16 +62,17 @@
     <div class="titre">
         <h1>Pousse de cheveux</h1>
     </div>
-    <div class="catalogue2">
-        <h3>Faire pousser ses cheveux avec des huiles essentielles</h3>
+       <div class="center-content">
+  
         <span>Publié le 03/05/2024 à 9h12 par Inès Ribar</span>
-
-        <div class="center-content">
 
             <div class="video">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/EPRXtE9OLp8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
+
+
+     
 </header>
         <article class="article">
             <h1>Revitalisez vos cheveux avec les huiles essentielles</h1>

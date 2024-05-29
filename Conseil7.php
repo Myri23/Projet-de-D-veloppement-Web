@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cultivez la gratitude au quotidien</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="KanimyTuto_accueil.css">
 </head>
-<header class="navbar">
+	<header class="navbar">
         <img src="title.png" class="logo" width="150px" height="100px">
     
 
@@ -31,9 +31,16 @@
     </div>
 </header>
 <body>
-    <header>
-        <h1>Cultivez la gratitude au quotidien</h1>
-        <src img="Gratitude.png" alt="gratitudephoto">
+   
+    		<header>
+				<h1>Cultiver la gratitude</h1>
+              <div class="center-content">
+       <span>Publié le 29/05/2024 à 9h par jean</span>
+            <div class="catalogue_accueil img">
+                    <img src="Gratitude.png" alt="gratitude">
+            </div>
+        </div>
+
     <main>
         <section>
             <h2>Bien-être, Santé</h2>
@@ -49,6 +56,15 @@
         </section>
         <section>
             <h2>Comment pratiquer la gratitude au quotidien ?</h2>
+            	
+                     <div class="center-content">
+           <div class="video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/l6n7uxhNFew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+        </div>
+        <br><br>
+
             <ul>
                 <li>Commencez chaque journée en notant trois choses pour lesquelles vous êtes reconnaissant.</li>
                 <li>Réfléchissez à votre journée chaque soir et reconnaissez un bon moment ou une personne qui a fait une différence.</li>

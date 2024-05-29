@@ -10,7 +10,7 @@
 	
 
 </head>
-	<header class="navbar">
+		<header class="navbar">
         <img src="title.png" class="logo" width="150px" height="100px">
     
 
@@ -26,7 +26,7 @@
     <nav class="align-right"> 
         <a href="KanimyTuto_inscription.php" class="rounded-box">S'inscrire</a>
         <a href="KanimyTuto_connection.php" class="rounded-box">Se connecter</a>
-    </nav></br>	<br>
+    </nav></br>
 
 	<div class="search-container">
 		<form action="/search" method="GET">
@@ -36,22 +36,32 @@
 	</div>
 	</header>
 <body>
+	
     <div class="titre">
         <h1>Préparer la rentrée des classes</h1>
     </div>
-    <div class="catalogue2">
-        <h3>Conseils pour une rentrée scolaire réussie</h3>
-        <span>Publié le 29/05/2024 à 9h12 par Jades</span>
+   
         
-        <img src="rentree.jpg" alt="Image de fournitures scolaires">
+        <header>
+              <div class="center-content">
+       <span>Publié le 29/05/2024 à 9h12 par Jades</span>
+            <div class="catalogue_accueil img">
+                    <img src="rentree.jpg" alt="Rentree">
+            </div>
+        </div>
+        </header>
+ 
 
         <article class="article">
             <h1>Optimisez votre rentrée avec organisation et planification</h1>
             <p>La rentrée scolaire peut être une période stressante, mais une bonne préparation peut grandement faciliter la transition. De l'achat des fournitures à la planification de votre emploi du temps, chaque détail compte.</p>
-
-            <div class="video">
-                <iframe width="560" height="315" src="https://www.youtube.com/watch?v=Wap-mNSzQZs&ab_channel=Dreaminreality" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                       <div class="center-content">
+<br><br>
+       <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Wap-mNSzQZs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            </div>
+<br><br>
 
             <h2>Les essentiels de la rentrée</h2>
             <ul>
@@ -70,54 +80,66 @@
             <p>Impliquez-vous dans la préparation de la rentrée de vos enfants en discutant de leurs attentes et en visitant l'école en avance.</p>
         </article>
     </div>
+<br><br>
 
+<div class="comment-section">
+        <h1>Ajouter un commentaire</h1>
+        <form action="Conseil2.php" method="POST"> <!-- Modifiez ici l'action -->
+            <label for="username">Nom:</label>
+            <input type="text" id="username" name="username" required>
 
-  <div class="comment-section">
-        <h2>Commentaires</h2>
-        <form action="submit_commentaire2.php" method="POST">
-            <label for="username">Nom:</label><br>
-            <input type="text" id="username" name="username" required><br><br>
-            <label for="comment">Commentaire:</label><br>
-            <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
-            <button type="submit">Soumettre</button>
+            <label for="comment">Commentaire:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+
+            <button type="submit" name="submit">Soumettre</button>
         </form>
-        <div id="comment-list">
-            <?php
-            // Lire les commentaires à partir du fichier JSON
-            $comments_file = 'comments2.json';
-            if (file_exists($comments_file)) {
-                $comments_json = file_get_contents($comments_file);
-                $comments = json_decode($comments_json, true);
 
-                if (!empty($comments)) {
-                    foreach ($comments as $comment) {
-                        echo "<div class='comment'><p class='comment-author'>" . htmlspecialchars($comment['username']) . "</p><p>" . htmlspecialchars($comment['comment']) . "</p><p class='comment-date'>" . $comment['created_at'] . "</p></div>";
-                    }
-                } else {
-                    echo "<p>Aucun commentaire pour le moment.</p>";
-                }
+        <?php
+        // Configuration de la base de données
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "kanimy_tuto";
+
+        // Créer la connexion
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Vérifier la connexion
+        if ($conn->connect_error) {
+            die("La connexion a échoué: " . $conn->connect_error);
+        }
+
+        if (isset($_POST['submit'])) {
+            $user = $conn->real_escape_string($_POST['username']);
+            $comment = $conn->real_escape_string($_POST['comment']);
+
+            // Préparer la requête SQL pour éviter les injections SQL
+            $stmt = $conn->prepare("INSERT INTO commentaires (username, comment) VALUES (?, ?)");
+            $stmt->bind_param("ss", $user, $comment);
+
+            // Exécuter la requête
+            if ($stmt->execute()) {
+                echo "<p>Commentaire ajouté avec succès!</p>";
             } else {
-                echo "<p>Aucun commentaire pour le moment.</p>";
+                echo "Erreur lors de l'ajout du commentaire: " . $stmt->error;
             }
-            ?>
-        </div>
 
-		<section id="about">
-		<h2>A propos de nous</h2>
-		<p>Notre plateforme, Kanimy Tuto, est bien plus qu'une simple source d'informations. C'est un espace de partage où les utilisateurs peuvent non seulement découvrir une multitude de conseils pratiques dans divers domaines, mais aussi contribuer en partageant leurs propres astuces et connaissances. Que ce soit en proposant une nouvelle recette de smoothie, en partageant des conseils pour cultiver la gratitude ou en dévoilant une technique de bricolage ingénieuse, chaque utilisateur a l'opportunité d'enrichir la communauté par ses connaissances et son expérience. Venez découvrir, apprendre et partager sur Kanimy Tuto, où l'entraide et la créativité sont au cœur de notre philosophie.
-		L'équipe fondatrice de Kanimy Tuto, Kanto A, Inès R et Myriam Saadi, vous souhaite la bienvenue !
-		</p>
-	</section>
+            $stmt->close();
+        }
 
-	<section id="contact">
-		<h2>Nous contacter</h2>
-		<p>Vous souhaitez nous informer d'un problème sur la plateforme ? Contactez nous par mail au <a href="mailto:">KanimyTuto@gmail.com</a></p>
-	</section>
-</div>
+        // Récupérer et afficher les commentaires
+        $result = $conn->query("SELECT username, comment, created_at FROM commentaires ORDER BY created_at DESC");
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='comment'><strong>" . htmlspecialchars($row['username']) . "</strong> (" . $row['created_at'] . ") dit :<br>" . htmlspecialchars($row['comment']) . "</div>";
+            }
+        } else {
+            echo "<p>Aucun commentaire pour le moment.</p>";
+        }
 
-	<footer class="center-align">
-		&copy; 2024 Kanimy Tuto 
-	</footer>
+        $conn->close();
+        ?>
+    </div>
 
 </body>
 

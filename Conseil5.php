@@ -60,11 +60,18 @@
 <body>
 		<header>
 				<h1>Tutoriel DIY - Comment Fabriquer une Étagère Murale Flottante en Bois</h1>
+              <div class="center-content">
+       <span>Publié le 29/05/2024 à 9h par elise</span>
+            <div class="catalogue_accueil img">
+                    <img src="Etagères.jpg" alt="Etagères">
+            </div>
+        </div>
+
 		</header>
 
 		<main>
 				<section>
-						<h2>Introduction</h2>
+
 						<p>
 								Dans ce tutoriel, nous allons apprendre à fabriquer une étagère murale flottante en bois. Cette étagère élégante et fonctionnelle est parfaite pour afficher des livres, des cadres photo ou d'autres décorations dans n'importe quelle pièce de votre maison. Ce projet de bricolage est adapté aux débutants et ne nécessite que des compétences de base en menuiserie.
 						</p>
@@ -84,7 +91,13 @@
 								<li>Teinture ou peinture (facultatif)</li>
 								<li>Pinceau ou chiffon (pour appliquer la teinture ou la peinture)</li>
 						</ul>
-						<img src="images/materiel_requis.jpg" alt="Matériel requis" class="responsive">
+			<div class="center-content">
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iX1MYaAFoQg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+
 				</section>
 
 				<section>
@@ -94,7 +107,8 @@
 								<li>Utilisez une scie pour couper la planche de bois aux dimensions désirées.</li>
 								<li>Utilisez du papier de verre pour lisser les bords et la surface de la planche de bois.</li>
 						</ol>
-						<img src="images/preparation_materiel.jpg" alt="Préparation du matériel" class="responsive">
+				
+				
 				</section>
 
 				<section>
@@ -105,7 +119,7 @@
 								<li>Marquez les emplacements des trous de vis de l'équerre sur la planche de bois.</li>
 								<li>Percez des trous pilotes à chaque marque à l'aide d'une perceuse électrique.</li>
 						</ol>
-						<img src="images/fixation_equerre.jpg" alt="Fixation de l'équerre métallique" class="responsive">
+			
 				</section>
 
 				<section>
@@ -116,28 +130,28 @@
 								<li>Marquez les emplacements des trous de vis sur le mur à travers les trous de l'équerre.</li>
 								<li>Percez des trous dans le mur aux emplacements marqués.</li>
 						</ol>
-						<img src="images/fixation_au_mur.jpg" alt="Fixation de l'étagère au mur" class="responsive">
+					
 				</section>
 
 				<section>
-						<h2>Étape 4 : Fixation de l’Étagère au Mur (Suite)</h2>
+						<h2>Étape 4 : Fixation de l’Étagère au Mur </h2>
 						<ol>
 								<li>Placez la planche de bois contre le mur et fixez-la en vissant les vis à bois à travers les trous de l'équerre et dans le mur à l'aide d'une perceuse électrique.</li>
 								<li>Assurez-vous que l'étagère est solidement fixée au mur et qu'elle est bien droite.</li>
 						</ol>
-						<video controls class="responsive">
-								<source src="videos/fixation_etagere.mp4" type="video/mp4">
+
+			
 								Votre navigateur ne supporte pas la balise vidéo.
 						</video>
 				</section>
 
 				<section>
-						<h2>Étape 5 : Finition (Facultatif)</h2>
+						<h2>Étape 5 : Finition </h2>
 						<ol>
 								<li>Si vous le souhaitez, vous pouvez appliquer une teinture ou une peinture à la planche de bois pour lui donner un aspect personnalisé.</li>
 								<li>Laissez sécher la teinture ou la peinture selon les instructions du fabricant avant d'utiliser l'étagère.</li>
 						</ol>
-						<img src="images/finition.jpg" alt="Finition de l'étagère" class="responsive">
+					
 				</section>
 
 				<section>

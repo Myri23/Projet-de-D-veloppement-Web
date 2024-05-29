@@ -23,6 +23,10 @@
         <a href="KanimyTuto_inscription.php" class="rounded-box">S'inscrire</a>
         <a href="KanimyTuto_connection.php" class="rounded-box">Se connecter</a>
     </nav></br>
+	<nav class="align-right"> 
+		<a href="#signup" class="rounded-box">S'inscrire</a>
+		<a href="#login" class="rounded-box">Se connecter</a>
+	</nav></br>
 
 	 <div class="search-container">
         <form method="GET">
@@ -59,7 +63,17 @@
 <body>
 		<header>
 				<h1>Créer une Application de Liste de Tâches avec Flutter</h1>
+				
 		</header>
+		
+		      <h1>Recette de Smoothie pour le Bien-être</h1>
+              <div class="center-content">
+
+            <div class="catalogue_accueil img">
+                    <img src="flutter.jpg" alt="Smoothie">
+            </div>
+        </div>
+<br><br>
 
 		<main>
 				<section>
