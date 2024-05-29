@@ -102,6 +102,9 @@ Vous serez redirigé vers la page d'accueil du projet où vous pourrez commencer
 ### Images
 Nous avons la possibilité que les utilisateurs déposent des fichiers images  pour accompagner un conseil, seulement, lorsque l'utilisateur le soumet, le fichier ne se stocke pas dans la base de données.
 
+### Notes
+Nous avons eu des difficultés pour récupérer les notes et afficher la moyenne de celles ci.
+
 
 ## Auteurs
 
