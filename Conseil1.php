@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Page de conseils</title>
-    <link href="KanimyTuto_accueil.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<header class="navbar">
@@ -95,39 +95,81 @@
             <p>Bien que bénéfiques, les huiles essentielles sont très concentrées et doivent toujours être diluées avec une huile porteuse pour éviter les réactions cutanées. Assurez-vous également de faire un petit test cutané avant de les appliquer pleinement, pour éviter toute allergie ou irritation.</p>
         </article>
     </div>
+ <div class="comment-section">
+      <title>Formulaire de Commentaire</title>
+    <style>
+        label, input, textarea, button {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, button {
+            width: 300px;
+        }
+        .comment {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
 
     <div class="comment-section">
-        <h2>Commentaires</h2>
-        <form action="submit_commentaire.php" method="POST">
-            <label for="username">Nom:</label><br>
-            <input type="text" id="username" name="username" required><br><br>
-            <label for="comment">Commentaire:</label><br>
-            <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
-            <button type="submit">Soumettre</button>
-        </form>
-        <div id="comment-list">
-            <?php
-            // Lire les commentaires à partir du fichier JSON
-            $comments_file = 'comments.json';
-            if (file_exists($comments_file)) {
-                $comments_json = file_get_contents($comments_file);
-                $comments = json_decode($comments_json, true);
+        <h1>Ajouter un commentaire</h1>
+        <form action="Conseil1.php" method="POST"> <!-- Modifiez ici l'action -->
+            <label for="username">Nom:</label>
+            <input type="text" id="username" name="username" required>
 
-                if (!empty($comments)) {
-                    foreach ($comments as $comment) {
-                        echo "<div class='comment'><p class='comment-author'>" . htmlspecialchars($comment['username']) . "</p><p>" . htmlspecialchars($comment['comment']) . "</p><p class='comment-date'>" . $comment['created_at'] . "</p></div>";
-                    }
-                } else {
-                    echo "<p>Aucun commentaire pour le moment.</p>";
-                }
+            <label for="comment">Commentaire:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+
+            <button type="submit" name="submit">Soumettre</button>
+        </form>
+
+        <?php
+        // Configuration de la base de données
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "kanimy_tuto";
+
+        // Créer la connexion
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Vérifier la connexion
+        if ($conn->connect_error) {
+            die("La connexion a échoué: " . $conn->connect_error);
+        }
+
+        if (isset($_POST['submit'])) {
+            $user = $conn->real_escape_string($_POST['username']);
+            $comment = $conn->real_escape_string($_POST['comment']);
+
+            // Préparer la requête SQL pour éviter les injections SQL
+            $stmt = $conn->prepare("INSERT INTO commentaires (username, comment) VALUES (?, ?)");
+            $stmt->bind_param("ss", $user, $comment);
+
+            // Exécuter la requête
+            if ($stmt->execute()) {
+                echo "<p>Commentaire ajouté avec succès!</p>";
             } else {
-                echo "<p>Aucun commentaire pour le moment.</p>";
+                echo "Erreur lors de l'ajout du commentaire: " . $stmt->error;
             }
-            ?>
-        </div>
-  
+
+            $stmt->close();
+        }
+
+        // Récupérer et afficher les commentaires
+        $result = $conn->query("SELECT username, comment, created_at FROM commentaires ORDER BY created_at DESC");
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='comment'><strong>" . htmlspecialchars($row['username']) . "</strong> (" . $row['created_at'] . ") dit :<br>" . htmlspecialchars($row['comment']) . "</div>";
+            }
+        } else {
+            echo "<p>Aucun commentaire pour le moment.</p>";
+        }
+
+        $conn->close();
+        ?>
     </div>
-    
     
     	<section id="about">
 		<h2>A propos de nous</h2>
