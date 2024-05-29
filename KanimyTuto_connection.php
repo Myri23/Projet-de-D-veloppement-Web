@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Kanimy Tuto</title>
+    <!-- Lien vers la feuille de style externe -->
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <!-- Section d'en-tête contenant la barre de navigation et le titre -->
     <header class="navbar">
         <img src="title.png" class="logo" width="150px" height="100px">
     
-
+    <!-- Menu de navigation principal -->
     <nav>
         <ul>
             <li><a href="KanimyTuto_accueil.php">Accueil</a></li>
@@ -20,11 +22,13 @@
         </ul>
     </nav>
 
+    <!-- Menu de navigation secondaire pour les actions utilisateur -->
     <nav class="align-right"> 
         <a href="KanimyTuto_inscription.php" class="rounded-box">S'inscrire</a>
         <a href="KanimyTuto_connection.php" class="rounded-box">Se connecter</a>
     </nav></br>
 
+    <!-- Formulaire de recherche -->
      <div class="search-container">
         <form action="/search" method="GET">
             <input type="search" name="query" placeholder="Rechercher..." required> 
