@@ -1,3 +1,50 @@
+<?php
+session_start();
+include 'basedonnees_connection.php';
+
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['user_id'])) {
+    header("Location: KanimyTuto_connection.php");
+    exit();
+}
+
+// Récupérer l'ID de l'utilisateur connecté
+$user_id = $_SESSION['user_id'];
+
+// Requête pour récupérer les conseils de l'utilisateur
+$stmt_user = $conn->prepare("SELECT titre, contenu, date_submis FROM conseils WHERE user_id = ? ORDER BY date_submis DESC");
+if (!$stmt_user) {
+    die("Erreur de préparation de la requête: " . $conn->error);
+}
+$stmt_user->bind_param("i", $user_id);
+$stmt_user->execute();
+$result_user = $stmt_user->get_result();
+
+// Requête pour récupérer tous les conseils du site
+$stmt_all = $conn->prepare("SELECT titre, contenu, date_submis FROM conseils ORDER BY date_submis DESC");
+if (!$stmt_all) {
+    die("Erreur de préparation de la requête: " . $conn->error);
+}
+$stmt_all->execute();
+$result_all = $stmt_all->get_result();
+
+// Traiter les résultats et afficher les conseils
+
+
+// Pour la page répertoriant tous les conseils du site
+while ($row_all = $result_all->fetch_assoc()) {
+    // Afficher tous les conseils du site
+    echo "<h3>" . htmlspecialchars($row_all['titre']) . "</h3>";
+    echo "<p>" . htmlspecialchars($row_all['contenu']) . "</p>";
+    echo "<p>Date de soumission: " . $row_all['date_submis'] . "</p>";
+}
+
+// Fermer les requêtes et la connexion à la base de données
+$stmt_user->close();
+$stmt_all->close();
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -25,8 +72,8 @@
 	</nav>
 
 	<nav class="align-right"> 
-		<a href="#signup" class="rounded-box">S'inscrire</a>
-		<a href="#login" class="rounded-box">Se connecter</a>
+		<a href="KanimyTuto_inscription.php" class="rounded-box">S'inscrire</a>
+		<a href="KanimyTuto_connection.php" class="rounded-box">Se connecter</a>
 	</nav></br>	<br>
 
 	<div class="search-container">
