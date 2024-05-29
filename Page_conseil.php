@@ -87,9 +87,9 @@ $conn->close();
 
 	
 
- <?php // Pour la page répertoriant tous les conseils du site
+ <?php 
 while ($row_all = $result_all->fetch_assoc()) {
-    // Afficher tous les conseils du site ?>
+    // Afficher tous les conseils soumis sur le site ?>
     <div class="catalogue_accueil">
     <?php echo "<h3>" . htmlspecialchars($row_all['titre']) . "</h3>";
     echo "<p>" . htmlspecialchars($row_all['contenu']) . "</p>";

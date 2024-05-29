@@ -9,11 +9,11 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Récupérer l'ID du conseil à modifier
-if (isset($_GET['id'])) {
-    $conseil_id = $_GET['id'];
+if (isset($_GET['conseil_id'])) {
+    $conseil_id = $_GET['conseil_id'];
 
     // Récupérer les informations du conseil
-    $stmt = $conn->prepare("SELECT titre, categories, contenu, image_data FROM conseils WHERE id = ? AND user_id = ?");
+    $stmt = $conn->prepare("SELECT titre, categories, contenu, image_data FROM conseils WHERE conseil_id = ? AND user_id = ?");
     if (!$stmt) {
         die("Erreur de préparation de la requête: " . $conn->error);
     }
@@ -24,6 +24,7 @@ if (isset($_GET['id'])) {
     $stmt->close();
 } else {
     header("Location: KanimyTuto_utilisateurs.php");
+    header("Location: Page_conseil.php");
     exit();
 }
 ?>
@@ -64,6 +65,7 @@ if (isset($_GET['id'])) {
 <body>
     <div class="content">
         <h1>Modifier Conseil</h1>
+        <!-- Formulaire pour modifier un conseil -->
         <form action="update_conseil.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="conseil_id" value="<?php echo htmlspecialchars($conseil_id); ?>">
             <div class="profile-info">

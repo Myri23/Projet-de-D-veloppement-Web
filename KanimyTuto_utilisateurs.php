@@ -22,7 +22,7 @@ $stmt->close();
 
 
 
-// Requête pour compter le nombre de conseils créés par l'utilisateur
+// Comptage du nombre de conseils créés par l'utilisateur
 $stmt_count = $conn->prepare("SELECT COUNT(*) FROM conseils WHERE user_id = ?");
 if (!$stmt_count) {
     die("Erreur de préparation de la requête: " . $conn->error);
@@ -92,7 +92,9 @@ $stmt_count->close();
         </form>
         <div class="container">
         <h2>Mes conseils</h2>
+        <!-- Lien pour soumettre un nouveau conseil -->
         <a href="KanimyTuto_soumission_conseil.php">Créer un nouveau conseil</a></br>
+        <!-- Affichage des conseils déjà soumis par l'utilisateur -->
         <?php
 
         include 'basedonnees_connection.php';
@@ -124,7 +126,9 @@ $stmt_count->close();
         if (!empty($row_user['image_data'])) {
             echo '<img src="data:image/jpeg;base64,' . base64_encode($row_user['image_data']) . '" alt="Image du conseil">';
         }
-            echo '<a href="suppression_conseil.php?id=' . $row_user['id'] . '">Supprimer</a>';
+            //Liens pour modifier ou supprimer le conseil
+            echo '<a href="modifier_conseil.php?id=' . $row_user['id'] . '">Modifier le conseil</a>';
+            echo '<a href="suppression_conseil.php?id=' . $row_user['id'] . '">Supprimer le conseil</a>';
         }
 
 
@@ -135,7 +139,7 @@ $stmt_count->close();
 
         </div>
         <div class="container">
-        <h2>Mes statistiques</h2>
+        <h2>Ma contribution</h2>
         <p>Nombre de conseils créés : <?php echo $conseil_count; ?></p>
         </div>
     </div>
