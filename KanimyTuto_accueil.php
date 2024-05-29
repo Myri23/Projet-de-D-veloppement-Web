@@ -4,12 +4,15 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kanimy Tuto</title>
-	<link rel="stylesheet" type="text/css" href="KanimyTuto_accueil.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 	<header class="navbar">
-		<h1>Kanimy Tuto</h1>
+		<img src="title.png" class="logo" width="150px" height="100px">
 	
 
 	<nav>
@@ -22,8 +25,8 @@
 	</nav>
 
 	<nav class="align-right"> 
-		<a href="#signup" class="rounded-box">S'inscrire</a>
-		<a href="#login" class="rounded-box">Se connecter</a>
+		<a href="KanimyTuto_inscription.php" class="rounded-box">S'inscrire</a>
+		<a href="KanimyTuto_connection.php" class="rounded-box">Se connecter</a>
 	</nav></br>
 
 	 <div class="search-container">

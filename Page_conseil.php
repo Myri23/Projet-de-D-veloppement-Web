@@ -31,13 +31,7 @@ $result_all = $stmt_all->get_result();
 // Traiter les résultats et afficher les conseils
 
 
-// Pour la page répertoriant tous les conseils du site
-while ($row_all = $result_all->fetch_assoc()) {
-    // Afficher tous les conseils du site
-    echo "<h3>" . htmlspecialchars($row_all['titre']) . "</h3>";
-    echo "<p>" . htmlspecialchars($row_all['contenu']) . "</p>";
-    echo "<p>Date de soumission: " . $row_all['date_submis'] . "</p>";
-}
+
 
 // Fermer les requêtes et la connexion à la base de données
 $stmt_user->close();
@@ -52,11 +46,10 @@ $conn->close();
 	<meta charset="utf-8">
 	<meta name="3.2" content="width=device-width">
 	<title>page de conseils</title>
-	<link href="KanimyTuto_accueil.css" rel="stylesheet" type="text/css" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
 
 </head>
 	<header class="navbar">
@@ -91,6 +84,22 @@ $conn->close();
 	<div class="titre">
  <h1>Page de conseils</h1>
 	</div>
+
+	
+
+ <?php // Pour la page répertoriant tous les conseils du site
+while ($row_all = $result_all->fetch_assoc()) {
+    // Afficher tous les conseils du site ?>
+    <div class="catalogue_accueil">
+    <?php echo "<h3>" . htmlspecialchars($row_all['titre']) . "</h3>";
+    echo "<p>" . htmlspecialchars($row_all['contenu']) . "</p>";
+    echo "<p>Date de soumission: " . $row_all['date_submis'] . "</p>";?>
+
+    <button>Lire la suite</button>
+    </div><br><br>
+<?php } ?>
+
+	
 
 	<div class="catalogue_accueil">
 	<img src="rentree.jpg" >

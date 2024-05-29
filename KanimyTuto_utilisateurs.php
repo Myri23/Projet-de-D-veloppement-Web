@@ -42,11 +42,11 @@ $stmt_count->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Utilisateur</title>
-    <link rel="stylesheet" type="text/css" href="KanimyTuto_formulaire.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <header class="navbar">
-        <h1>Kanimy Tuto</h1>
+        <img src="title.png" class="logo" width="150px" height="100px">
     
 
     <nav>
@@ -54,6 +54,7 @@ $stmt_count->close();
             <li><a href="KanimyTuto_accueil.php">Accueil</a></li>
             <li><a href="KanimyTuto_accueil.php">A propos de nous</a></li>
             <li><a href="KanimyTuto_accueil.php">Nous contacter</a></li>
+            <li><a href="Page_conseil.php">Liste de conseils</a></li>
         </ul>
     </nav>
 
@@ -62,10 +63,10 @@ $stmt_count->close();
         <a href="KanimyTuto_connection.php" class="rounded-box">Se connecter</a>
     </nav></br>
 
-    <div class="search-container">
-        <form action="/search" method="GET">
-            <input type="search" name="query" placeholder="Rechercher..." required>
-            <button type="submit" class="rounded-box">Rerchercher</button>
+     <div class="search-container">
+        <form method="GET">
+            <input type="search" name="s" placeholder="Rechercher un conseil" value="<?php echo isset($_GET['s']) ? htmlspecialchars($_GET['s']) : ''; ?>">
+            <input type="submit" name="envoyer" value="Rechercher">
         </form>
     </div>
     </header>
