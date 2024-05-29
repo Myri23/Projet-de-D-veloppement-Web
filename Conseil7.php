@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultivez la gratitude au quotidien</title>
+    <link rel="stylesheet" type="text/css" href="KanimyTuto_accueil.css">
+</head>
+<header class="navbar">
+    <h1>Kanimy Tuto</h1>
+    <nav>
+        <ul>
+            <li><a href="KanimyTuto_accueil.php">Accueil</a></li>
+            <li><a href="#about">A propos de nous</a></li>
+            <li><a href="#contact">Nous contacter</a></li>
+            <li><a href="Page_conseil.php">Liste de conseils</a></li>
+        </ul>
+    </nav>
+    <nav class="align-right">
+        <a href="#signup" class="rounded-box">S'inscrire</a>
+        <a href="#login" class="rounded-box">Se connecter</a>
+    </nav></br>
+    <div class="search-container">
+        <form method="GET">
+            <input type="search" name="s" placeholder="Rechercher un conseil">
+            <input type="submit" name="envoyer" value="Rechercher">
+        </form>
+    </div>
+</header>
+<body>
+    <header>
+        <h1>Cultivez la gratitude au quotidien</h1>
+        <src img="Gratitude.png" alt="gratitudephoto">
+    <main>
+        <section>
+            <h2>Bien-être, Santé</h2>
+            <p>
+                Découvrez comment cultiver un esprit positif et un bien-être général grâce à la pratique de la gratitude. En prenant simplement le temps de reconnaître et d'apprécier les éléments positifs de votre vie, vous ouvrirez la porte à une plus grande satisfaction et à un bonheur durable.
+            </p>
+        </section>
+        <section>
+            <h2>Pourquoi la gratitude est-elle importante ?</h2>
+            <p>
+                La gratitude ne se limite pas à dire merci. C'est une approche profonde de la vie qui encourage la reconnaissance active des bonnes choses qui nous arrivent, qu'elles soient grandes ou petites. Des études montrent que tenir un journal de gratitude peut augmenter votre bonheur de 10% !
+            </p>
+        </section>
+        <section>
+            <h2>Comment pratiquer la gratitude au quotidien ?</h2>
+            <ul>
+                <li>Commencez chaque journée en notant trois choses pour lesquelles vous êtes reconnaissant.</li>
+                <li>Réfléchissez à votre journée chaque soir et reconnaissez un bon moment ou une personne qui a fait une différence.</li>
+                <li>Exprimez ouvertement votre gratitude aux autres, que ce soit par un simple merci, une note, ou un geste gentil.</li>
+                <li>Utilisez des rappels visuels qui encouragent la gratitude, comme des citations inspirantes ou des images autour de votre espace de vie ou de travail.</li>
+            </ul>
+        </section>
+    </main>
+    <div class="comment-section">
+        <h2>Commentaires</h2>
+        <form action="submit_commentaire7.php" method="POST">
+            <label for="username">Nom:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="comment">Commentaire:</label><br>
+            <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
+            <button type="submit">Soumettre</button>
+        </form>
+        <div id="comment-list">
+            <!-- Les commentaires seront insérés ici par PHP -->
+        </div>
+    </div>
+    <section id="about">
+        <h2>A propos de nous</h2>
+        <p>Sur Kanimy Tuto, nous nous engageons à offrir des ressources qui inspirent et enrichissent votre quotidien. Découvrez des conseils pratiques pour une vie plus heureuse et plus équilibrée.</p>
+    </section>
+    <section id="contact">
+        <h2>Nous contacter</h2>
+        <p>Pour toute question ou suggestion, n'hésitez pas à nous écrire à KanimyTuto@gmail.com</p>
+    </section>
+    <footer class="center-align">
+        &copy; 2024 Kanimy Tuto
+    </footer>
+</body>
+</html>
