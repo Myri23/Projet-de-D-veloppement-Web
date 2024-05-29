@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kanimy Tuto</title>
+	<link rel="stylesheet" type="text/css" href="KanimyTuto_accueil.css">
+</head>
+
+<body>
+	<header class="navbar">
+		<h1>Kanimy Tuto</h1>
+	
+
+	<nav>
+		<ul>
+			<li><a href="KanimyTuto_accueil.php">Accueil</a></li>
+			<li><a href="#about">A propos de nous</a></li>
+			<li><a href="#contact">Nous contacter</a></li>
+			<li><a href="Page_conseil.php">Liste de conseils</a></li>
+		</ul>
+	</nav>
+
+	<nav class="align-right"> 
+		<a href="#signup" class="rounded-box">S'inscrire</a>
+		<a href="#login" class="rounded-box">Se connecter</a>
+	</nav></br>
+
+	 <div class="search-container">
+        <form method="GET">
+            <input type="search" name="s" placeholder="Rechercher un conseil" value="<?php echo isset($_GET['s']) ? htmlspecialchars($_GET['s']) : ''; ?>">
+            <input type="submit" name="envoyer" value="Rechercher">
+        </form>
+	</div>
+    </header>
+
+        <?php
+        if (isset($_GET['s']) && !empty(trim($_GET['s']))) {
+            $jsonContent = file_get_contents('keywords.json');
+            if ($jsonContent === false) {
+                die("Erreur lors de la lecture du fichier JSON.");
+            }
+
+            $jsonData = json_decode($jsonContent, true);
+            if ($jsonData === null && json_last_error() !== JSON_ERROR_NONE) {
+                die("Erreur de décodage JSON : " . json_last_error_msg());
+            }
+
+            $recherche = strtolower(trim(htmlspecialchars($_GET['s'])));
+            $recherche = str_replace(' ', '-', $recherche);
+
+            if (array_key_exists($recherche, $jsonData)) {
+                include($jsonData[$recherche]);
+            } else {
+                echo "<p>Aucun article correspondant à votre recherche n'a été trouvé.</p>";
+            }
+        } else {
+            
+        }
+        ?>
+
+<div class="content">
+	<section id="home">
+	<h2 class="styled-heading">Accueil</h2>
+
+
+		
+		<div class="welcome-text">
+			<h2>Bienvenue sur Kanimy Tuto !</h2>
+			<p>
+				Nous sommes ravis de vous accueillir sur notre site dédié aux conseils. Ici, vous trouverez une multitude de conseils, astuces et tutoriels pour prendre soin de vous et améliorer votre quotidien. Que vous cherchiez des solutions pour faire pousser vos cheveux, des astuces de beauté naturelle ou des guides pour une vie plus saine, vous êtes au bon endroit.
+			</p>
+			<p>
+				Explorez nos articles, regardez nos vidéos et n'hésitez pas à nous contacter si vous avez des questions ou des suggestions. Inscrivez-vous pour recevoir nos dernières mises à jour et rejoignez notre communauté pour partager vos expériences et découvrir encore plus de conseils exclusifs.
+			</p>
+			<p>
+				Nous vous souhaitons une agréable visite et espérons que vous trouverez tout ce dont vous avez besoin pour vous sentir bien dans votre peau. Bienvenue chez Kanimy Tuto !
+			</p>
+		</div>
+		
+		<br><br>
+				<h3 class="styled-heading">Astuces tendances du moment</h3>
+
+		<br><br>
+		<div class="catalogue_accueil">
+  			<img src="Smoothie.jpg" >
+			<h4>Recette de Smoothie aux Fruits Frais en 5 étapes</h4> 
+			<i>Cuisine, Recette, Santé</i> 
+    		<p>Besoin d'un coup de fraîcheur pour démarrer votre journée en beauté ou pour vous désaltérer lors des journées chaudes ? Les smoothies aux fruits sont là pour vous ! Dans ce tutoriel, je vous dévoile une recette simple, gorgée de saveurs et de vitamines, pour concocter le smoothie aux fruits frais parfait.</p>
+		<a href="Conseil6.php">
+  			<button>Lire la suite</button>
+		</a>
+		</div>
+		<br><br>
+		<div class="catalogue_accueil">
+  			<img src="Gratitude.png" >
+			<h4>Cultivez la gratitude au quotidien</h4> 
+			<i>Bien-être, Santé</i> 
+    		<p>Découvrez comment cultiver un esprit positif et un bien-être général grâce à la pratique de la gratitude. En prenant simplement le temps de reconnaître et d'apprécier les éléments positifs de votre vie, vous ouvrirez la porte à une plus grande satisfaction et à un bonheur durable.</p>   		
+		<a href="Conseil7.php">
+  			<button>Lire la suite</button>
+  			</a>
+  			</div>
+  			</section>
+  			<br> <br>
+  			
+  				<section id="about">
+		<h2 class="styled-heading">A propos de nous</h2>
+		<p>Notre plateforme, Kanimy Tuto, est bien plus qu'une simple source d'informations. C'est un espace de partage où les utilisateurs peuvent non seulement découvrir une multitude de conseils pratiques dans divers domaines, mais aussi contribuer en partageant leurs propres astuces et connaissances. Que ce soit en proposant une nouvelle recette de smoothie, en partageant des conseils pour cultiver la gratitude ou en dévoilant une technique de bricolage ingénieuse, chaque utilisateur a l'opportunité d'enrichir la communauté par ses connaissances et son expérience. Venez découvrir, apprendre et partager sur Kanimy Tuto, où l'entraide et la créativité sont au cœur de notre philosophie.
+		L'équipe fondatrice de Kanimy Tuto, Kanto A, Inès R et Myriam Saadi, vous souhaite la bienvenue !
+		</p>
+	</section>
+
+	<section id="contact">
+		<h2 class="styled-heading">Nous contacter</h2>
+		<p>Vous souhaitez nous informer d'un problème sur la plateforme ? Contactez nous par mail au <a href="mailto:">KanimyTuto@gmail.com</a></p>
+	</section>
+</div>
+
+	<footer class="center-align">
+		&copy; 2024 Kanimy Tuto 
+	</footer>
+
+  			
+  			</body>
+  	
+    
+</html>
+
