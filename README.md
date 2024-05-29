@@ -1,4 +1,4 @@
-# Projet Plateforme de partage de conseils et d'astuces pour la vie quotidienne
+# Projet : Plateforme de partage de conseils et d'astuces pour la vie quotidienne
 
 Nom de notre plateforme **Kanimy Tuto : tips and tricks**
 
@@ -38,13 +38,19 @@ La barre de recherche a été implémentée en utilisant SQL et JSON pour permet
 
 ### Inscription
 
-- Formulaire d'inscription : La page comprend un formulaire d'inscription où les utilisateurs peuvent saisir leur nom d'utilisateur, leur adresse e-mail et leur mot de passe. Ces
+- Formulaire d'inscription : La page comprend un formulaire d'inscription où les utilisateurs peuvent saisir leur nom d'utilisateur, leur adresse e-mail et leur mot de passe.
 - Soumission du formulaire : Lorsque l'utilisateur remplit le formulaire et appuie sur le bouton "S'inscrire", les données saisies sont envoyées à un script PHP (inscription_process.php) pour être traitées. Ce script est responsable de la création du compte utilisateur dans la base de données. 
 
 ### Connexion
 
 ### Soumission de conseil
-
+#### Page de soumission
+#### Récupération et transmission du conseil
+Nous avons implémenté la soumission de commentaires en utilisant deux approches différentes : SQL et JSON.
+##### Fichiers utilisés :
+    - SQL : Le fichier commentaires.sql contient les instructions SQL nécessaires pour gérer les commentaires.
+    - JSON : Le fichier commentaires.json est utilisé pour manipuler les commentaires au format JSON.
+    - PHP : Le fichier submit_commentaire.php relie la base de données JSON et la page PHP de soumission de conseils.
 
 ## Installation
 
