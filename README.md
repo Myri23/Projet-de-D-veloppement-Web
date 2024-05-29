@@ -47,14 +47,17 @@ La barre de recherche a été implémentée en utilisant SQL et JSON pour permet
 
 ### Prérequis
 
-- [Exigence 1] : (ex. Node.js, Python, etc.)
-- [Exigence 2] : (ex. Base de données spécifique, etc.)
+#### Langages utiles
+- php :
+
+#### Base de donnée
+Pour créer les bases de données et les tables nécessaires, il faut exécuter les fichiers SQL sur GitHub dans son espace phpMyAdmin.
 
 ### Étapes d'Installation
 
-1. Clonez le dépôt :
-   ```bash
-   git clone https://github.com/votre-utilisateur/nom-du-repo.git
+ Clonez le dépôt :
+  
+   git clone https://github.com/Myri23/Projet-de-D-veloppement-Web
 
 
 ## Utilisation
