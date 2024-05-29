@@ -42,15 +42,18 @@ La barre de recherche a été implémentée en utilisant SQL et JSON pour permet
 - Soumission du formulaire : Lorsque l'utilisateur remplit le formulaire et appuie sur le bouton "S'inscrire", les données saisies sont envoyées à un script PHP (inscription_process.php) pour être traitées. Ce script est responsable de la création du compte utilisateur dans la base de données. 
 
 ### Connexion
+La page de connexion de Kanimy Tuto est essentielle pour les utilisateurs enregistrés sur la plateforme. Elle leur permet d'accéder à leur compte personnel en fournissant leurs identifiants, tels que leur nom d'utilisateur ou leur adresse e-mail, ainsi que leur mot de passe. 
 
 ### Soumission de conseil
 #### Page de soumission
+Si l'utilisateur n'est pas connecté il ne pourra pas soumettre de conseils.
+-Formulaire de soumission : La page comprend un formulaire où les utilisateurs peuvent saisir le titre, la catégorie, soumettre une image et un conseil.
 #### Récupération et transmission du conseil
 Nous avons implémenté la soumission de commentaires en utilisant deux approches différentes : SQL et JSON.
 ##### Fichiers utilisés :
-    - SQL : Le fichier commentaires.sql contient les instructions SQL nécessaires pour gérer les commentaires.
-    - JSON : Le fichier commentaires.json est utilisé pour manipuler les commentaires au format JSON.
-    - PHP : Le fichier submit_commentaire.php relie la base de données JSON et la page PHP de soumission de conseils.
+  - SQL : Le fichier commentaires.sql contient les instructions SQL nécessaires pour gérer les commentaires.
+  - JSON : Le fichier commentaires.json est utilisé pour manipuler les commentaires au format JSON.
+  - PHP : Le fichier submit_commentaire.php relie la base de données JSON et la page PHP de soumission de conseils.
 
 ## Installation
 
@@ -95,7 +98,7 @@ Vous serez redirigé vers la page d'accueil du projet où vous pourrez commencer
 ## Problèmes et Suggestions
 
 ### Images
-Nous avons la possibilité que les utilisateurs déposent des fichiers images ou vidéos pour accompagner un conseil seulement, au moment où l'utilisateur le soumet, le fichier ne se stocke pas dans la base de données. 
+Nous avons la possibilité que les utilisateurs déposent des fichiers images  pour accompagner un conseil, seulement, lorsque l'utilisateur le soumet, le fichier ne se stocke pas dans la base de données. 
 
 
 ## Auteurs
