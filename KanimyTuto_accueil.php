@@ -30,9 +30,9 @@
 	</nav></br>
 
 	 <div class="search-container">
-        <form method="GET">
-            <input type="search" name="s" placeholder="Rechercher un conseil" value="<?php echo isset($_GET['s']) ? htmlspecialchars($_GET['s']) : ''; ?>">
-            <input type="submit" name="envoyer" value="Rechercher">
+        <form action="/search" method="GET">
+            <input type="search" name="query" placeholder="Rechercher..." required> 
+            <button type="submit" class="rounded-box">Rechercher</button>
         </form>
 	</div>
     </header>
