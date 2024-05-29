@@ -98,7 +98,7 @@ Vous serez redirigé vers la page d'accueil du projet où vous pourrez commencer
 ## Problèmes et Suggestions
 
 ### Images
-Nous avons la possibilité que les utilisateurs déposent des fichiers images  pour accompagner un conseil, seulement, lorsque l'utilisateur le soumet, le fichier ne se stocke pas dans la base de données. 
+Nous avons la possibilité que les utilisateurs déposent des fichiers images  pour accompagner un conseil, seulement, lorsque l'utilisateur le soumet, le fichier ne se stocke pas dans la base de données.
 
 
 ## Auteurs
