@@ -4,26 +4,26 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Créer une Illustration Numérique de Paysage en 5 Étapes</title>
-		<link rel="stylesheet" href="KanimyTuto_accueil.css">
+		<link rel="stylesheet" href="style.css">
 </head>
 
 	<header class="navbar">
-		<h1>Kanimy Tuto</h1>
+        <img src="title.png" class="logo" width="150px" height="100px">
+    
 
+    <nav>
+        <ul>
+            <li><a href="KanimyTuto_accueil.php">Accueil</a></li>
+            <li><a href="KanimyTuto_accueil.php">A propos de nous</a></li>
+            <li><a href="KanimyTuto_accueil.php">Nous contacter</a></li>
+            <li><a href="Page_conseil.php">Liste de conseils</a></li>
+        </ul>
+    </nav>
 
-		<nav>
-		<ul>
-			<li><a href="KanimyTuto_accueil.php">Accueil</a></li>
-			<li><a href="#about">A propos de nous</a></li>
-			<li><a href="#contact">Nous contacter</a></li>
-			<li><a href="Page_conseil.php">Liste de conseils</a></li>
-		</ul>
-	</nav>
-
-	<nav class="align-right"> 
-		<a href="#signup" class="rounded-box">S'inscrire</a>
-		<a href="#login" class="rounded-box">Se connecter</a>
-	</nav></br>	<br>
+    <nav class="align-right"> 
+        <a href="KanimyTuto_inscription.php" class="rounded-box">S'inscrire</a>
+        <a href="KanimyTuto_connection.php" class="rounded-box">Se connecter</a>
+    </nav></br>	<br>
 
 	<div class="search-container">
 		<form action="/search" method="GET">
