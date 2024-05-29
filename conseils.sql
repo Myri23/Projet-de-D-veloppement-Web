@@ -1,4 +1,4 @@
-CREATE TABLE conseils (
+CREATE TABLE conseils ( /*créer une table "conseils" dans la base de données kanimy_tuto dans phpMyadmin en local*/
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     titre VARCHAR(255) NOT NULL,
