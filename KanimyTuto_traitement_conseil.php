@@ -24,10 +24,10 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     $imageData = file_get_contents($imageTmpPath);
 } else {
     // Aucune image n'a été téléchargée
-    $imageData = null; // Utilisez une valeur par défaut ou traitez l'erreur selon votre cas
+    $imageData = null; as
 }
 
-// Préparer et exécuter la requête d'insertion
+// Préparation et exécution de la requête d'insertion
 $stmt = $conn->prepare("INSERT INTO conseils (user_id, titre, categories, contenu, image_data, date_submis) VALUES (?, ?, ?, ?, ?, NOW())");
 if (!$stmt) {
     die("Erreur de préparation de la requête: " . $conn->error);
@@ -47,7 +47,7 @@ if ($stmt->execute()) {
 $stmt->close();
 $conn->close();
 
-// Rediriger vers une page de confirmation ou une autre page appropriée
+// Redirection vers une page de confirmation
 header("Location: KanimyTuto_soumission_conseil_confirmation.php");
 exit();
 ?>

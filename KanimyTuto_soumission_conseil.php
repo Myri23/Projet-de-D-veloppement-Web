@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+// Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
     header("Location: KanimyTuto_connection.php");
     exit();
@@ -42,6 +44,7 @@ if (!isset($_SESSION['user_id'])) {
     </header>
     <div class="content">
         <h1>Soumettre un Conseil</h1>
+        <!-- Formulaire de soumission d'un conseil -->
         <form action="KanimyTuto_traitement_conseil.php" method="POST" class="container">
             <div class="profile-info">
                 <label for="titre">Titre:</label>
