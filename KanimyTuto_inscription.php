@@ -33,6 +33,37 @@
     </div>
     </header>
 
+      <!-- Script PHP pour gérer les demandes de recherche -->
+    <?php
+        // Vérifie si le paramètre 's' est défini et non vide
+        if (isset($_GET['s']) && !empty(trim($_GET['s']))) {
+            // Lire le contenu du fichier JSON
+            $jsonContent = file_get_contents('keywords.json');
+            if ($jsonContent === false) {
+                die("Erreur lors de la lecture du fichier JSON.");
+            }
+
+            // Décoder les données JSON
+            $jsonData = json_decode($jsonContent, true);
+            if ($jsonData === null && json_last_error() !== JSON_ERROR_NONE) {
+                die("Erreur de décodage JSON : " . json_last_error_msg());
+            }
+
+            // Traitement de la recherche
+            $recherche = strtolower(trim(htmlspecialchars($_GET['s'])));
+            $recherche = str_replace(' ', '-', $recherche);
+
+            // Vérifie si la recherche correspond à une clé dans les données JSON
+            if (array_key_exists($recherche, $jsonData)) {
+                include($jsonData[$recherche]);
+            } else {
+                echo "<p>Aucun article correspondant à votre recherche n'a été trouvé.</p>";
+            }
+        } else {
+            // Si la recherche est vide, ne rien faire
+        }
+    ?>
+
     <div class="content">
         <section>
             <h2>Inscription</h2>
